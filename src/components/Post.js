@@ -1,5 +1,12 @@
 import React from 'react';
 import './Post.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faComment,
+  faRetweet,
+  faHeart,
+  faShare
+} from '@fortawesome/free-solid-svg-icons';
 
 function Post({ displayName, username, verified, text, image, avatar }) {
   return (
@@ -26,10 +33,10 @@ function Post({ displayName, username, verified, text, image, avatar }) {
           <img src={image} alt="Post content" className="post__image" />
         )}
         <div className="post__footer">
-          <span className="post__footerIcon">💬</span>
-          <span className="post__footerIcon">🔁</span>
-          <span className="post__footerIcon">❤️</span>
-          <span className="post__footerIcon">🔗</span>
+          <FontAwesomeIcon icon={faComment} className="post__footerIcon" />
+          <FontAwesomeIcon icon={faRetweet} className="post__footerIcon" />
+          <FontAwesomeIcon icon={faHeart} className="post__footerIcon" />
+          <FontAwesomeIcon icon={faShare} className="post__footerIcon" />
         </div>
       </div>
     </div>
