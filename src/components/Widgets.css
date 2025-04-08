@@ -1,0 +1,124 @@
+.widgets {
+  flex: 0.3;
+  padding: 0 20px;
+  overflow-y: scroll;
+}
+
+.widgets::-webkit-scrollbar {
+  display: none;
+}
+
+.widgets {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.widgets__search {
+  display: flex;
+  align-items: center;
+  background-color: var(--twitter-background);
+  padding: 10px;
+  border-radius: 20px;
+  margin: 15px 0;
+}
+
+.widgets__searchIcon {
+  color: gray;
+  margin-right: 10px;
+}
+
+.widgets__search input {
+  border: none;
+  outline: none;
+  background-color: var(--twitter-background);
+  flex: 1;
+}
+
+.widgets__container {
+  background-color: #f5f8fa;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.widgets__container h2 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.widgets__trend {
+  padding: 10px 0;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+.widgets__trendHeader {
+  display: flex;
+  justify-content: space-between;
+  color: gray;
+  font-size: 13px;
+}
+
+.widgets__trendName {
+  font-weight: bold;
+  font-size: 15px;
+  margin: 5px 0;
+}
+
+.widgets__trendTweets {
+  color: gray;
+  font-size: 13px;
+}
+
+.widgets__follow {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+.widgets__follow img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.widgets__followInfo {
+  flex: 1;
+}
+
+.widgets__followName {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.widgets__followUsername {
+  color: gray;
+  font-size: 13px;
+}
+
+.widgets__followButton {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 5px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.widgets__followButton:hover {
+  background-color: #333;
+}
+
+.widgets__showMore {
+  color: var(--twitter-color);
+  cursor: pointer;
+  padding: 10px 0;
+  font-size: 15px;
+}
