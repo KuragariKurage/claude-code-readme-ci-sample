@@ -1,0 +1,41 @@
+name: Update README with Claude Code
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm -g install @anthropic-ai/claude-code
+
+    - name: Update README
+      env:
+        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      run: |
+        claude -p "コードの変更内容を README.md に反映してください。" \
+        --allowedTools "Bash(git diff:*)" "Bash(git log:*)" Edit
+
+    - name: Create pull request
+      uses: peter-evans/create-pull-request@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        title: "docs: update README with Claude Code"
+        body: "README.md を Claude Code で更新しました。"
+        base: main
+        branch: chore/readme-update-${{ github.head_ref }}
+        commit-message: "docs: update README with Claude Code"
