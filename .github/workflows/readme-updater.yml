@@ -1,7 +1,7 @@
 name: Update README with Claude Code
 
 on:
-  push:
+  pull_request:
     branches: [ main ]
 
 permissions:
