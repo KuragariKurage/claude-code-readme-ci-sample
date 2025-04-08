@@ -23,4 +23,4 @@ npm start
 
 - React
 - CSS
-- Font Awesome（アイコン）
+- Font Awesome（アイコン）test
